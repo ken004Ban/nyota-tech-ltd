@@ -1,0 +1,104 @@
+@import "lenis/dist/lenis.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Lifted from near-black: easier on the eyes, still editorial-dark */
+  --color-bg: #141416;
+  --color-surface: #1c1c20;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-text-primary: #f7f7f2;
+  --color-text-secondary: rgba(247, 247, 242, 0.55);
+  --color-accent: #ebe4d6;
+  --color-highlight: #c8ff4d;
+  --color-nav-scrolled: rgba(20, 20, 22, 0.9);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+
+/* Layout helpers */
+@layer components {
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1200px] px-[clamp(1.5rem,5vw,4rem)];
+  }
+
+  .section-y {
+    @apply py-[clamp(6rem,12vw,14rem)];
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:px-4 focus:py-2;
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 2px;
+  }
+}
+
+/* Focus visible — highlight ring */
+:focus-visible {
+  outline: 2px solid var(--color-highlight);
+  outline-offset: 3px;
+}
+
+/* Marquee: pause when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Custom cursor: hide default while active */
+body.cursor-none-override {
+  cursor: none;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: var(--color-accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link-underline:hover::after,
+.nav-link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+}
+
+.scroll-cue-arrow {
+  animation: scrollCue 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-arrow {
+    animation: none;
+  }
+}
