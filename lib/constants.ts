@@ -50,6 +50,7 @@ export const FOOTER_LINKS = [
 export const SOCIAL_LINKS = [
   { href: "https://linkedin.com", label: "LinkedIn" },
   { href: "https://twitter.com", label: "X" },
+  { href: "https://wa.me/260973971192", label: "WhatsApp" },
 ] as const;
 
 export type ServiceItem = {

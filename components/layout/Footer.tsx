@@ -71,6 +71,17 @@ export function Footer() {
                     {COMPANY.email}
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://wa.me/260973971192"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-primary"
+                    data-cursor-hover
+                  >
+                    WhatsApp
+                  </a>
+                </li>
                 {COMPANY.phone ? <li>{COMPANY.phone}</li> : null}
                 {COMPANY.address ? (
                   <li className="max-w-[12rem] leading-relaxed">

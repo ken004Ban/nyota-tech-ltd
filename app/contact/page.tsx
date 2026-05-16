@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -37,6 +38,14 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
+            <div className="mb-8 flex justify-center lg:justify-start">
+              <MagneticButton
+                href="https://wa.me/260973971192"
+                variant="primary"
+              >
+                Chat on WhatsApp
+              </MagneticButton>
+            </div>
             <ContactForm />
           </div>
         </div>
