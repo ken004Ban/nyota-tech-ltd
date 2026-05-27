@@ -16,6 +16,7 @@ export const COMPANY: CompanyInfo = {
   tagline: "Software & systems",
   est: "2026",
   email: "nyotatech.info@gmail.com",
+  phone: "+260 96 202 6492",
 };
 
 /** Home stats — honest early-stage metrics (values parsed by AnimatedStat). */
@@ -50,7 +51,7 @@ export const FOOTER_LINKS = [
 export const SOCIAL_LINKS = [
   { href: "https://linkedin.com", label: "LinkedIn" },
   { href: "https://twitter.com", label: "X" },
-  { href: "https://wa.me/260973971192", label: "WhatsApp" },
+  { href: "https://wa.me/260771204563", label: "WhatsApp" },
 ] as const;
 
 export type ServiceItem = {

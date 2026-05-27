@@ -40,7 +40,7 @@ export default function ContactPage() {
           <div className="lg:col-span-6 lg:col-start-7">
             <div className="mb-8 flex justify-center lg:justify-start">
               <MagneticButton
-                href="https://wa.me/260973971192"
+                href="https://wa.me/260771204563"
                 variant="primary"
               >
                 Chat on WhatsApp
